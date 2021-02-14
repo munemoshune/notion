@@ -85,7 +85,7 @@ sealed class NotionCollectionColumnSchema {
     data class Select(
         override val name: String,
         override val type: NotionColumnType,
-        val options: List<NotionSelectOption>
+        val options: List<NotionSelectOption>? = null
     ) : NotionCollectionColumnSchema()
 
     @Serializable
@@ -93,7 +93,7 @@ sealed class NotionCollectionColumnSchema {
     data class MultiSelect(
         override val name: String,
         override val type: NotionColumnType,
-        val options: List<NotionSelectOption>
+        val options: List<NotionSelectOption>? = null
     ) : NotionCollectionColumnSchema()
 
     @Serializable
@@ -156,19 +156,23 @@ sealed class NotionCollectionColumnSchema {
 
     @Serializable
     @SerialName("last_edited_time")
-    data class LastEditedTime(override val name: String, override val type: NotionColumnType) : NotionCollectionColumnSchema()
+    data class LastEditedTime(override val name: String, override val type: NotionColumnType) :
+        NotionCollectionColumnSchema()
 
     @Serializable
     @SerialName("last_edited_by")
-    data class LastEditedBy(override val name: String, override val type: NotionColumnType) : NotionCollectionColumnSchema()
+    data class LastEditedBy(override val name: String, override val type: NotionColumnType) :
+        NotionCollectionColumnSchema()
 
     @Serializable
     @SerialName("created_time")
-    data class CreatedTime(override val name: String, override val type: NotionColumnType) : NotionCollectionColumnSchema()
+    data class CreatedTime(override val name: String, override val type: NotionColumnType) :
+        NotionCollectionColumnSchema()
 
     @Serializable
     @SerialName("created_by")
-    data class CreatedBy(override val name: String, override val type: NotionColumnType) : NotionCollectionColumnSchema()
+    data class CreatedBy(override val name: String, override val type: NotionColumnType) :
+        NotionCollectionColumnSchema()
 
     @Serializable
     @SerialName("rollup")
